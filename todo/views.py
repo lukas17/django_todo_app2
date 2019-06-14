@@ -4,6 +4,8 @@ from django.views.decorators.http import require_POST
 from .models import Todo
 from .forms import TodoForm
 
+from django.views.generic import TemplateView
+
 def index(request):
     todo_list = Todo.objects.order_by('id')
 
@@ -39,3 +41,6 @@ def deleteAll(request):
     Todo.objects.all().delete()
 
     return redirect('index')
+
+class AboutView(TemplateView):
+    template_name = "about.html"
