@@ -1,4 +1,5 @@
 from django.urls import path
+from todo.views import AboutView
 
 from . import views
 
