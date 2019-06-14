@@ -43,4 +43,4 @@ def deleteAll(request):
     return redirect('index')
 
 class AboutView(TemplateView):
-    template_name = "todo/about.html"
+    template_name = "about.html"
