@@ -44,3 +44,12 @@ def deleteAll(request):
 
 class AboutView(TemplateView):
     template_name = "about.html"
+
+def app3(request):
+    todo_list = Todo.objects.order_by('id')
+
+    form = TodoForm()
+
+    context = {'todo_list' : todo_list, 'form' : form}
+
+    return render(request, 'todo/app3.html', context)
