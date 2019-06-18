@@ -4,6 +4,9 @@ from django.views.decorators.http import require_POST
 from .models import Todo
 from .forms import TodoForm
 
+from .models import Todo3
+from .forms import TodoForm3
+
 from django.views.generic import TemplateView
 
 def index(request):
@@ -46,9 +49,9 @@ class AboutView(TemplateView):
     template_name = "about.html"
 
 def app3(request):
-    todo_list = Todo.objects.order_by('id')
+    todo_list = Todo3.objects.order_by('id')
 
-    form = TodoForm()
+    form = TodoForm3()
 
     context = {'todo_list' : todo_list, 'form' : form}
 
