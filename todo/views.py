@@ -48,6 +48,8 @@ def deleteAll(request):
 class AboutView(TemplateView):
     template_name = "about.html"
 
+# App3 portion
+
 def app3(request):
     todo_list = Todo3.objects.order_by('id')
 
@@ -56,3 +58,29 @@ def app3(request):
     context = {'todo_list' : todo_list, 'form' : form}
 
     return render(request, 'todo/app3.html', context)
+
+def addTodo3(request):
+    form = TodoForm3(request.POST)
+
+    if form.is_valid():
+        new_todo = Todo3(text=request.POST['text'])
+        new_todo.save()
+
+    return redirect('app3')
+
+def completeTodo3(request, todo_id):
+    todo = Todo3.objects.get(pk=todo_id)
+    todo.complete = True
+    todo.save()
+
+    return redirect('app3')
+
+def deleteCompleted3(request):
+    Todo3.objects.filter(complete__exact=True).delete()
+
+    return redirect('app3')
+
+def deleteAll3(request):
+    Todo3.objects.all().delete()
+
+    return redirect('app3')
