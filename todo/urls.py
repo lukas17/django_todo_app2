@@ -10,4 +10,5 @@ urlpatterns = [
     path('deletecomplete', views.deleteCompleted, name='deletecomplete'),
     path('deleteall', views.deleteAll, name='deleteall'),
     path('about/', AboutView.as_view()),
+    path('app2/', views.index, name='app2')
 ]
