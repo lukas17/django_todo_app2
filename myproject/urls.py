@@ -21,6 +21,6 @@ urlpatterns = [
     path('', include('todo.urls')), # Include everything from todo/url.py
     path('users/', include('users.urls')),
     path('users/', include('django.contrib.auth.urls')),
-    path('accounts/', include('accounts.urls')),
-    path('accounts/', include('django.contrib.auth.urls')),
+    # path('accounts/', include('accounts.urls')),
+    # path('accounts/', include('django.contrib.auth.urls')),
 ]
