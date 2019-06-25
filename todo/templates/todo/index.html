@@ -19,6 +19,19 @@
 			
 			<div class="row">
 				<div class="col-lg-4 col-lg-offset-4" id="content">
+					{% block content %}
+					{% if user.is_authenticated %}
+					  Hi {{ user.username }}!
+					  <p><a href="{% url 'logout' %}">logout</a></p>
+					{% else %}
+					  <p>You are not logged in</p>
+					  <a href="{% url 'login' %}">login</a>
+					{% endif %}
+					{% endblock %}
+				</div>
+					<br>
+					<br>
+				<div class="col-lg-4 col-lg-offset-4" id="content">
 					<h2>WHAT DO YOU WANT TO DO TODAY FRIEND?</h2>
 					
 					<form action="{% url 'add' %}" method="POST" role="form">
