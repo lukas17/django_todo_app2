@@ -16,14 +16,11 @@ def index(request):
     return render(request, 'todo/index.html', context)
 
 @require_POST
-def addTodo(request, request):
+def addTodo(request):
     form = TodoForm(request.POST)
 
     if form.is_valid():
         new_todo = Todo(text=request.POST['text'])
-        userOfTodo = Todo(text=request.POST['userOfTodo'])
-        
-        , userEmail=request.POST['userEmailInput'])
         new_todo.save()
 
     return redirect('index')
