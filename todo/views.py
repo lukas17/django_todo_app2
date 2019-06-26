@@ -20,7 +20,7 @@ def addTodo(request):
     form = TodoForm(request.POST)
 
     if form.is_valid():
-        new_todo = Todo(text=request.POST['text'])
+        new_todo = Todo(text=request.POST['text'], writer=request.POST['writer'])
         new_todo.save()
 
     return redirect('index')
