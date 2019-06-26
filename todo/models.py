@@ -2,14 +2,9 @@ from django.db import models
 
 class Todo(models.Model):
     text = models.CharField(max_length=40)
+    userEmail = models.CharField(max_length=50)
     complete = models.BooleanField(default=False)
 
     def __str__(self):
         return self.text
 
-class Todo3(models.Model):
-    text = models.CharField(max_length=40)
-    complete = models.BooleanField(default=False)
-
-    def __str__(self):
-        return self.text
