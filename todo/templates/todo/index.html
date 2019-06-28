@@ -69,11 +69,10 @@
 
 					<ul class="list-group t20">
 						{% for todo in todo_list %}
-							<!-- {% if todo.writer == user.username %} -->
 							{% if todo.complete %}
 							<li class="list-group-item todo-completed">{{ todo.text }} and {{ todo.writer }}</li>
 							{% else %}
-							<a href="{% url 'complete' todo.id %}"><li class="list-group-item">{{ todo.text }} and {{ todo.writer }} and {{ user.username }} and {{ user.email }}</li></a>
+							<a href="{% url 'complete' todo.id %}"><li class="list-group-item">{{ todo.text }} and {{ todo.writer }} and {{ user.username }} and {{ user.email }} and {{ user }}</li></a>
 							{% endif %}
 						{% endfor %}
 					</ul>
