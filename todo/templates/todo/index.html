@@ -72,7 +72,7 @@
 							{% if todo.complete %}
 							<li class="list-group-item todo-completed">{{ todo.text }} and {{ todo.writer }}</li>
 							{% else %}
-							<a href="{% url 'complete' todo.id %}"><li class="list-group-item">{{ todo.text }} and {{ todo.writer }}</li></a>
+							<a href="{% url 'complete' todo.id %}"><li class="list-group-item">{{ todo.text }} and {{ todo.writer }} and {{ user }}</li></a>
 							{% endif %}
 						{% endfor %}
 					</ul>
