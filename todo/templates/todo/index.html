@@ -69,7 +69,7 @@
 
 					<ul class="list-group t20">
 						{% for todo in todo_list %}
-							{% if todo.writer == user.username %}
+							{% if todo.writer == user.email %}
 								{% if todo.complete %}
 								<li class="list-group-item todo-completed">{{ todo.text }} and {{ todo.writer }}</li>
 								{% else %}
